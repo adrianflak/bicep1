@@ -1,11 +1,18 @@
 name: say-hello-deploy
+concurrency: toy-company
 
 on: [workflow_dispatch]
+
+  push: 
+    branches: 
+      - main
+    paths:
+      - 'deploy/**'
 
 permissions:
   id-token: write
   contents: read
-  
+
 env:
   AZURE_RESOURCEGROUP_NAME: ToyWebsite
   ENVIRONMENT: nonprod
