@@ -1,17 +1,17 @@
-name: say-hello-deploy
+name: deploy-toy-website
 
 on: [workflow_dispatch]
 
 permissions:
   id-token: write
   contents: read
-  
+
 env:
-  AZURE_RESOURCEGROUP_NAME: cloudshellgrupazasobow
-  ENVIRONMENT: nonprod
+    AZURE_RESOURCEGROUP_NAME: ToyWebsite
+    ENVIRONMENT: nonprod
 
 jobs:
-  say-hello:
+  deploy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
